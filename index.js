@@ -1,5 +1,7 @@
 'use strict';
 
+/* 060901 */
+
 var isWindows = process.platform === 'win32';
 
 // Regex to split a windows path into into [dir, root, basename, name, ext]
@@ -55,7 +57,7 @@ posix.parse = function(pathString) {
   if (!allParts || allParts.length !== 5) {
     throw new TypeError("Invalid path '" + pathString + "'");
   }
-  
+
   return {
     root: allParts[1],
     dir: allParts[0].slice(0, -1),
